@@ -57,7 +57,7 @@ def create_app():
     flask_app.config['MONGO_URI'] = os.getenv('MONGO_URI')
     flask_app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 
-    CORS(flask_app, origin=["#"])
+    CORS(flask_app, origins=["*"])
 
     @flask_app.route("/")
     def home():
